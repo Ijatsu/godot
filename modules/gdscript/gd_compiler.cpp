@@ -1662,7 +1662,7 @@ Error GDCompiler::_parse_class(GDScript *p_script,GDScript *p_owner,const GDPars
 			return err;
 	}
 
-	if (!has_ready && p_class->ready->statements.size()) {
+	if (has_ready && p_class->ready->statements.size()) {
 		//create a constructor
 		Error err = _parse_function(p_script,p_class,NULL,true);
 		if (err)
